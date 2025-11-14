@@ -43,7 +43,8 @@ func _physics_process(delta: float) -> void:
 		
 		
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.name == "Portal":
+	if area.portal_name:
 		portal = area.portal_name
+		get_parent().get_node("PortalScript").check_portals()
 	
 		
