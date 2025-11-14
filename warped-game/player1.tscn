@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5uecvr6r8uhy"]
+
+[ext_resource type="Script" uid="uid://cjbyud4ra7sad" path="res://player1.gd" id="1_pqb02"]
+[ext_resource type="Texture2D" uid="uid://igo65y8yaiyo" path="res://dude1.png" id="2_ytgb6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3pafw"]
+radius = 1.9996948
+height = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_woueq"]
+atlas = ExtResource("2_ytgb6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3odsw"]
+atlas = ExtResource("2_ytgb6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bjfdx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_woueq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3odsw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="player1" type="CharacterBody2D"]
+script = ExtResource("1_pqb02")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6.0000005)
+rotation = 1.5882496
+shape = SubResource("CapsuleShape2D_3pafw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bjfdx")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 6.0000005)
+rotation = 1.5882496
+shape = SubResource("CapsuleShape2D_3pafw")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
