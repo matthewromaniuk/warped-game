@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://lg2oevujmomw"]
+[gd_scene load_steps=10 format=4 uid="uid://lg2oevujmomw"]
 
 [ext_resource type="Texture2D" uid="uid://ueuai68mjxpa" path="res://TileSetTemplate.png" id="1_vonw3"]
 [ext_resource type="PackedScene" uid="uid://sq5fyi4cig0y" path="res://portal.tscn" id="3_0b4ue"]
 [ext_resource type="PackedScene" uid="uid://c5uecvr6r8uhy" path="res://player1.tscn" id="3_oi3di"]
 [ext_resource type="PackedScene" uid="uid://c0ho0c2wpj14x" path="res://player2.tscn" id="4_0b4ue"]
+[ext_resource type="Script" uid="uid://ctwkmok74ste4" path="res://portal_script.gd" id="5_f2txt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0b4ue"]
 texture = ExtResource("1_vonw3")
@@ -134,5 +135,10 @@ position = Vector2(47, 81)
 modulate = Color(1, 0.21176471, 1, 1)
 position = Vector2(161, 83)
 
+[node name="PortalScript" type="Node" parent="."]
+script = ExtResource("5_f2txt")
+
+[connection signal="area_exited" from="Portal" to="player1" method="_on_portal_area_exited"]
 [connection signal="body_entered" from="Portal" to="player1" method="_on_portal_body_entered"]
+[connection signal="body_exited" from="Portal" to="Portal" method="_on_body_exited"]
 [connection signal="body_entered" from="Portal2" to="player1" method="_on_portal_body_entered"]

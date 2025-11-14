@@ -32,19 +32,29 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if velocity.x > 0:
-		$AnimatedSprite2D.flip_h = false
+		$Control/AnimatedSprite2D.flip_h = false
 	elif velocity.x:
-		$AnimatedSprite2D.flip_h	= true
+		$Control/AnimatedSprite2D.flip_h	= true
 	if velocity:
-		$AnimatedSprite2D.play("default")
+		$Control/AnimatedSprite2D.play("default")
 	else:
-		$AnimatedSprite2D.stop()
-		$AnimatedSprite2D.frame = 1
+		$Control/AnimatedSprite2D.stop()
+		$Control/AnimatedSprite2D.frame = 1
 		
 		
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.portal_name:
+	if "portal_name" in area:
 		portal = area.portal_name
 		get_parent().get_node("PortalScript").check_portals()
-	
+	else:
+		pass
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	if "portal_name" in area:
+		portal = "2"
+	else:
+		pass
 		
+func portal_animation() -> void:
+	var tween = get_tree().create_tween()
+	tween.tween_property($Control, "size", Vector2(10, 0), 1)

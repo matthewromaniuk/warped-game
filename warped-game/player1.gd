@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
 var portal : String
+var cooldown := 0
 
 
 func _physics_process(delta: float) -> void:
@@ -32,19 +33,28 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if velocity.x > 0:
-		$AnimatedSprite2D.flip_h = false
+		$Control/AnimatedSprite2D.flip_h = false
 	elif velocity.x:
-		$AnimatedSprite2D.flip_h	= true
+		$Control/AnimatedSprite2D.flip_h	= true
 	if velocity:
-		$AnimatedSprite2D.play("default")
+		$Control/AnimatedSprite2D.play("default")
 	else:
-		$AnimatedSprite2D.stop()
-		$AnimatedSprite2D.frame = 1
+		$Control/AnimatedSprite2D.stop()
+		$Control/AnimatedSprite2D.frame = 1
 		
 		
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.portal_name:
+	if "portal_name" in area:
 		portal = area.portal_name
 		get_parent().get_node("PortalScript").check_portals()
-	
+	else:
+		pass
+
 		
+
+
+func _on_portal_area_exited(area: Area2D) -> void:
+	if "portal_name" in area:
+		portal = "1"
+	else:
+		pass
