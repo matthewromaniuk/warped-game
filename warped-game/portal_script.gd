@@ -13,8 +13,11 @@ func _process(delta: float) -> void:
 func check_portals() -> void:
 	if get_parent().get_node("player1").portal == get_parent().get_node("player2").portal and cooldown <= 0:
 		var temp = get_parent().get_node("player1").position
+		get_parent().get_node("player1").portal_animation()
+		get_parent().get_node("player2").portal_animation()
+		await get_tree().create_timer(1).timeout
 		get_parent().get_node("player1").position = get_parent().get_node("player2").position
 		get_parent().get_node("player2").position = temp
 		get_parent().get_node("player1").portal = "1"
 		get_parent().get_node("player1").portal = "2"
-		cooldown = 300
+		cooldown = 60

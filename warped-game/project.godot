@@ -14,10 +14,6 @@ config/name="warped-game"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
-[autoload]
-
-global="*res://global.gd"
-
 [display]
 
 window/size/viewport_width=640
