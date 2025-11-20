@@ -41,21 +41,19 @@ func _physics_process(delta: float) -> void:
 	else:
 		$Control/AnimatedSprite2D.stop()
 		$Control/AnimatedSprite2D.frame = 1
-		
-		
+
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if "portal_name" in area:
 		portal = area.portal_name
 		get_parent().get_node("PortalScript").check_portals()
+		get_parent().get_node("PortalScript").light_portals(1, portal)
 	else:
 		pass
 
-		
-
-
 func _on_portal_area_exited(area: Area2D) -> void:
 	if "portal_name" in area:
-		portal = "1"
+		portal = ""
+		get_parent().get_node("PortalScript").unlight_portals(1)
 	else:
 		pass
 

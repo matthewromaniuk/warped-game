@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://y37wayk747qe"]
+
+[ext_resource type="Script" uid="uid://ctwkmok74ste4" path="res://portal_script.gd" id="1_rdbnu"]
+
+[node name="PortalScript" type="Node"]
+script = ExtResource("1_rdbnu")
+
+[node name="Cooldown" type="Timer" parent="."]
+one_shot = true
