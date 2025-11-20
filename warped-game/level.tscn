@@ -126,7 +126,7 @@ zoom = Vector2(2, 2)
 [node name="Portal a 1" parent="." instance=ExtResource("3_0b4ue")]
 position = Vector2(17, 49)
 portal_name = "a"
-portal_colour = Color(0.7294118, 0.4627451, 0.18039216, 1)
+portal_colour = Color(0.16978168, 0.55846584, 0.83769065, 1)
 
 [node name="Portal a 2" parent="." instance=ExtResource("3_0b4ue")]
 position = Vector2(193, 49)
