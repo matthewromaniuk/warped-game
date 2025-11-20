@@ -67,7 +67,7 @@ _data = {
 }
 
 [node name="player1" type="CharacterBody2D"]
-modulate = Color(2.341346, 18.892157, 18.892157, 1)
+modulate = Color(1.1893778, 0.5102064, 1.4067125, 1)
 collision_layer = 0
 script = ExtResource("1_pqb02")
 

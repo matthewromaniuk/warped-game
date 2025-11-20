@@ -67,6 +67,7 @@ _data = {
 }
 
 [node name="player2" type="CharacterBody2D"]
+modulate = Color(0.37042353, 0.8787015, 0.33930445, 1)
 collision_layer = 0
 script = ExtResource("1_rihsh")
 

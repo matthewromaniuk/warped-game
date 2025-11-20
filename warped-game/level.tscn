@@ -136,7 +136,6 @@ portal_name = "a"
 position = Vector2(47, 81)
 
 [node name="player2" parent="." instance=ExtResource("4_0b4ue")]
-modulate = Color(1, 0.21176471, 1, 1)
 position = Vector2(161, 83)
 
 [node name="PortalScript" parent="." instance=ExtResource("5_f2txt")]
