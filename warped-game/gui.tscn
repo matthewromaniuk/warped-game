@@ -1,0 +1,90 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1wpekww6s1et"]
+
+[ext_resource type="Script" uid="uid://cliw4qblxcf0m" path="res://gui.gd" id="1_80edf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k6omp"]
+bg_color = Color(0.23874435, 0.23874438, 0.23874423, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80edf"]
+bg_color = Color(0.71706694, 0.0008497364, 0.00046629072, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 4
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6lon5"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8o8l"]
+bg_color = Color(6.160736e-06, 0.69685936, 0.6081628, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 12
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 12
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource("1_80edf")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 40.0
+one_shot = true
+autostart = true
+
+[node name="Time" type="Label" parent="Timer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_right = 126.0
+offset_bottom = 27.0
+theme_override_styles/background = SubResource("StyleBoxFlat_k6omp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_80edf")
+max_value = 20.0
+step = 1.0
+value = 20.0
+show_percentage = false
+
+[node name="ProgressBar2" type="ProgressBar" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -126.0
+offset_bottom = 27.0
+grow_horizontal = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_6lon5")
+theme_override_styles/fill = SubResource("StyleBoxFlat_q8o8l")
+max_value = 20.0
+value = 20.0
+show_percentage = false

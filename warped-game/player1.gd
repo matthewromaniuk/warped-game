@@ -52,8 +52,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 func _on_portal_area_exited(area: Area2D) -> void:
 	if "portal_name" in area:
-		get_parent().get_node("PortalScript").unlight_portals(1)
 		portal = ""
+		get_parent().get_node("PortalScript").unlight_portals(1)
 	else:
 		pass
 

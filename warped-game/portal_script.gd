@@ -27,7 +27,7 @@ func check_portals() -> void:
 
 func player_in_portal() -> bool:
 	var player_present = false
-	if get_parent().get_node("player1").portal or get_parent().get_node("player1").portal:
+	if get_parent().get_node("player1").portal or get_parent().get_node("player2").portal:
 		player_present = true
 	return player_present
 
@@ -44,7 +44,7 @@ func light_portals(player : int ,portal : String):
 	tween.tween_property(get_parent().get_node("Portal " + portal + " 2"),"modulate", get_parent().get_node("Portal " + portal + " 1").portal_colour, 0.2)
 
 func unlight_portals(player : int):
-	if cooldown or !player_in_portal():
+	if !player_in_portal():
 		var portal
 		if player == 1:
 			portal = player1_portal
