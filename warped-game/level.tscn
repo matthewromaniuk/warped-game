@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://sq5fyi4cig0y" path="res://portal.tscn" id="3_0b4ue"]
 [ext_resource type="PackedScene" uid="uid://c5uecvr6r8uhy" path="res://player1.tscn" id="3_oi3di"]
 [ext_resource type="PackedScene" uid="uid://c0ho0c2wpj14x" path="res://player2.tscn" id="4_0b4ue"]
-[ext_resource type="Script" uid="uid://ctwkmok74ste4" path="res://portal_script.gd" id="5_f2txt"]
+[ext_resource type="PackedScene" uid="uid://y37wayk747qe" path="res://portal_script.tscn" id="5_f2txt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0b4ue"]
 texture = ExtResource("1_vonw3")
@@ -120,11 +120,12 @@ tile_set = SubResource("TileSet_0b4ue")
 position = Vector2(103, 46)
 zoom = Vector2(2, 2)
 
-[node name="Portal" parent="." instance=ExtResource("3_0b4ue")]
+[node name="Portal a 1" parent="." instance=ExtResource("3_0b4ue")]
 position = Vector2(17, 49)
 portal_name = "a"
+portal_colour = Color(0.7294118, 0.4627451, 0.18039216, 1)
 
-[node name="Portal2" parent="." instance=ExtResource("3_0b4ue")]
+[node name="Portal a 2" parent="." instance=ExtResource("3_0b4ue")]
 position = Vector2(193, 49)
 portal_name = "a"
 
@@ -135,10 +136,4 @@ position = Vector2(47, 81)
 modulate = Color(1, 0.21176471, 1, 1)
 position = Vector2(161, 83)
 
-[node name="PortalScript" type="Node" parent="."]
-script = ExtResource("5_f2txt")
-
-[connection signal="area_exited" from="Portal" to="player1" method="_on_portal_area_exited"]
-[connection signal="body_entered" from="Portal" to="player1" method="_on_portal_body_entered"]
-[connection signal="body_exited" from="Portal" to="Portal" method="_on_body_exited"]
-[connection signal="body_entered" from="Portal2" to="player1" method="_on_portal_body_entered"]
+[node name="PortalScript" parent="." instance=ExtResource("5_f2txt")]
