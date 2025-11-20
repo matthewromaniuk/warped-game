@@ -56,6 +56,7 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	else:
 		pass
 		
+		
 func portal_animation() -> void:
 	movement = false
 	velocity = Vector2(0,0)
