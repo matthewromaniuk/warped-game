@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=4 uid="uid://ng285ps6q1fp"]
+
+[ext_resource type="TileSet" uid="uid://dr2khdrk8jtl5" path="res://level.tres" id="1_wxivg"]
+[ext_resource type="Script" uid="uid://ktgu64lgk1e1" path="res://level_6.gd" id="2_wxivg"]
+[ext_resource type="PackedScene" uid="uid://d1wpekww6s1et" path="res://gui.tscn" id="3_0w5uq"]
+[ext_resource type="Texture2D" uid="uid://ueuai68mjxpa" path="res://TileSetTemplate.png" id="4_7touu"]
+[ext_resource type="PackedScene" uid="uid://sq5fyi4cig0y" path="res://portal.tscn" id="5_wkq1x"]
+[ext_resource type="PackedScene" uid="uid://c5uecvr6r8uhy" path="res://player1.tscn" id="6_c5dar"]
+[ext_resource type="PackedScene" uid="uid://c0ho0c2wpj14x" path="res://player2.tscn" id="7_nqqpn"]
+[ext_resource type="PackedScene" uid="uid://y37wayk747qe" path="res://portal_script.tscn" id="8_sopw3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oi3di"]
+texture = ExtResource("4_7touu")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_0b4ue"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_oi3di")
+
+[node name="Level" type="TileMapLayer"]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAACAAAAAAAFAAEAAAACAAEAAAAEAAEAAAABAAEAAAADAAEAAAABAAIAAAACAAEAAAABAAEAAAABAAEAAAABAAEAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAABAAIAAAABAAEAAAACAAIAAAACAAEAAAADAAIAAAABAAEAAAAEAAIAAAAAAAEAAAAFAAIAAAACAAEAAAAFAAMAAAACAAEAAAAEAAMAAAAAAAEAAAADAAMAAAABAAEAAAACAAMAAAACAAEAAAABAAMAAAABAAEAAAAAAAMAAAAAAAEAAAAAAAQAAAAAAAEAAAABAAQAAAABAAEAAAACAAQAAAACAAEAAAADAAQAAAABAAEAAAAEAAQAAAAAAAEAAAAFAAQAAAACAAEAAAAFAAUAAAACAAIAAAAEAAUAAAAAAAIAAAADAAUAAAABAAEAAAACAAUAAAACAAIAAAABAAUAAAABAAIAAAAAAAUAAAAAAAIAAAAMAAUAAAACAAIAAAAMAAQAAAACAAEAAAAMAAMAAAACAAEAAAAMAAIAAAACAAEAAAAMAAEAAAACAAEAAAAMAAAAAAACAAAAAAALAAUAAAABAAIAAAALAAQAAAABAAEAAAALAAMAAAABAAEAAAALAAIAAAABAAEAAAALAAEAAAABAAEAAAALAAAAAAABAAAAAAAKAAUAAAAAAAIAAAAKAAQAAAAAAAEAAAAKAAMAAAAAAAEAAAAKAAIAAAAAAAEAAAAKAAEAAAABAAEAAAAKAAAAAAABAAAAAAAJAAUAAAABAAEAAAAJAAQAAAABAAEAAAAJAAMAAAABAAEAAAAJAAIAAAABAAEAAAAJAAEAAAABAAIAAAAJAAAAAAABAAAAAAAIAAUAAAACAAIAAAAIAAQAAAACAAEAAAAIAAMAAAACAAEAAAAIAAIAAAACAAEAAAAIAAEAAAABAAEAAAAIAAAAAAABAAAAAAAHAAUAAAAAAAIAAAAHAAQAAAAAAAEAAAAHAAMAAAAAAAEAAAAHAAIAAAAAAAEAAAAHAAEAAAAAAAEAAAAHAAAAAAAAAAAAAAA=")
+tile_set = ExtResource("1_wxivg")
+script = ExtResource("2_wxivg")
+
+[node name="GUI" parent="." instance=ExtResource("3_0w5uq")]
+
+[node name="walls" type="TileMapLayer" parent="."]
+modulate = Color(0.57703495, 0.57703495, 0.57703495, 1)
+tile_map_data = PackedByteArray("AAD//wMAAAABAAEAAAD//wIAAAABAAEAAAD//wEAAAABAAEAAAD//wAAAAABAAEAAAD/////AAABAAEAAAAAAP//AAABAAEAAAABAP//AAABAAEAAAACAP//AAABAAEAAAADAP//AAABAAEAAAAEAP//AAABAAEAAAAFAP//AAABAAEAAAAGAP//AAABAAEAAAAGAAAAAAABAAEAAAAGAAEAAAABAAEAAAAGAAIAAAABAAEAAAAGAAMAAAABAAEAAAAGAAQAAAABAAEAAAAGAAUAAAABAAEAAAAGAAYAAAABAAEAAAAFAAYAAAABAAEAAAAEAAYAAAABAAEAAAADAAYAAAABAAEAAAACAAYAAAABAAEAAAABAAYAAAABAAEAAAAAAAYAAAABAAEAAAD//wYAAAABAAEAAAD//wUAAAABAAEAAAD//wQAAAABAAEAAAAHAAYAAAABAAEAAAAIAAYAAAABAAEAAAAJAAYAAAABAAEAAAAKAAYAAAABAAEAAAALAAYAAAABAAEAAAAMAAYAAAABAAEAAAANAAYAAAABAAEAAAANAAUAAAABAAEAAAANAAQAAAABAAEAAAANAAMAAAABAAEAAAANAAIAAAABAAEAAAANAAEAAAABAAEAAAANAAAAAAABAAEAAAANAP//AAABAAEAAAAMAP//AAABAAEAAAALAP//AAABAAEAAAAKAP//AAABAAEAAAAJAP//AAABAAEAAAAIAP//AAABAAEAAAAHAP//AAABAAEAAAADAAUAAAABAAEAAAADAAQAAAABAAEAAAADAAMAAAABAAEAAAADAAIAAAABAAEAAAAJAAUAAAABAAEAAAAJAAQAAAABAAEAAAAJAAMAAAABAAEAAAAJAAIAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_0b4ue")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(103, 46)
+
+[node name="Portal a 1" parent="." instance=ExtResource("5_wkq1x")]
+position = Vector2(80, 85)
+portal_name = "a"
+portal_colour = Color(0.16978168, 0.55846584, 0.83769065, 1)
+
+[node name="Portal a 2" parent="." instance=ExtResource("5_wkq1x")]
+position = Vector2(128, 85)
+portal_name = "a"
+
+[node name="player1" parent="." instance=ExtResource("6_c5dar")]
+position = Vector2(184, 82)
+
+[node name="player2" parent="." instance=ExtResource("7_nqqpn")]
+position = Vector2(24, 83)
+
+[node name="PortalScript" parent="." instance=ExtResource("8_sopw3")]

@@ -10,9 +10,11 @@ func _process(_delta: float) -> void:
 		elif $Timer.time_left <= 6:
 			$Timer/Time.modulate = Color(1,.6,0)
 			$Timer/Time.text = str($Timer.time_left).substr(0,4)
-		else:
+		elif $Timer.time_left <= 100:
 			$Timer/Time.modulate = Color(0,1,0)
 			$Timer/Time.text = str(int(floor($Timer.time_left)))
+		else:
+			pass
 	elif !$Timer.time_left:
 		$Timer/Time.modulate = Color(1,0,0)
 		$Timer/Time.text = "0:00"

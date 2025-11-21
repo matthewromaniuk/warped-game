@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://lg2oevujmomw"]
+[gd_scene load_steps=11 format=4 uid="uid://r4i6jm7ifvaj"]
 
 [ext_resource type="TileSet" uid="uid://dr2khdrk8jtl5" path="res://level.tres" id="1_i2041"]
 [ext_resource type="Script" uid="uid://2i0h7gj2fy4y" path="res://level_1.gd" id="2_usj0q"]
@@ -50,12 +50,12 @@ tile_set = SubResource("TileSet_0b4ue")
 position = Vector2(103, 46)
 
 [node name="Portal a 1" parent="." instance=ExtResource("4_5j5gb")]
-position = Vector2(17, 49)
+position = Vector2(49, 14)
 portal_name = "a"
 portal_colour = Color(0.16978168, 0.55846584, 0.83769065, 1)
 
 [node name="Portal a 2" parent="." instance=ExtResource("4_5j5gb")]
-position = Vector2(193, 49)
+position = Vector2(160, 15)
 portal_name = "a"
 
 [node name="player1" parent="." instance=ExtResource("5_mx85b")]

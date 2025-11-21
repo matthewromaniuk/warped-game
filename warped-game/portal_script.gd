@@ -17,12 +17,14 @@ func check_portals() -> void:
 	elif get_parent().get_node("player1").portal == get_parent().get_node("player2").portal:
 		get_parent().get_node("player1").portal_animation()
 		get_parent().get_node("player2").portal_animation()
+		get_parent().get_node("GUI/Timer").start(9999)
 		await get_tree().create_timer(1).timeout
 		if !global.failed:
 			global.level += 1
 			get_tree().change_scene_to_file("res://level"+str(global.level)+".tscn")
 		else:
 			get_tree().change_scene_to_file("res://level1.tscn")
+			global.level = 1
 			global.failed = false
 
 func player_in_portal() -> bool:
