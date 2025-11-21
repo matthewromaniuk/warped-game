@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
 var portal : String
+var button : String
 var movement = true
 
 func _physics_process(delta: float) -> void:
@@ -47,15 +48,20 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		portal = area.portal_name
 		get_parent().get_node("PortalScript").check_portals()
 		get_parent().get_node("PortalScript").light_portals(2, portal)
-	else:
+	elif "button_name" in area:
+		button = area.button_name
+		get_parent().get_node("button").check_button()
+	else:	
 		pass
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if "portal_name" in area:
 		portal = ""
 		get_parent().get_node("PortalScript").unlight_portals(2)
-	else:
-		pass
+	elif "button_name" in area:
+		button = ""
+		get_parent().get_node("button").check_button()
+		
 func portal_animation() -> void:
 	movement = false
 	velocity = Vector2(0,0)

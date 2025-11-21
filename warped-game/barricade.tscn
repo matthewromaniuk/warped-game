@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cj1aw3yon43uh"]
+
+[ext_resource type="Script" uid="uid://b5qqe0vw1g8o0" path="res://barricade.gd" id="1_4w3go"]
+[ext_resource type="Texture2D" uid="uid://ctqhse5kccjab" path="res://barriers.png" id="2_0fcun"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4mmjl"]
+texture = ExtResource("2_0fcun")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -1, 8, 1, -8, 1, -8, -1)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1, -8, 1, -8, 1, 8, -1, 8)
+
+[sub_resource type="TileSet" id="TileSet_c0sxi"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_4mmjl")
+
+[node name="barricade" type="StaticBody2D"]
+script = ExtResource("1_4w3go")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+modulate = Color(0.32782546, 0.74181694, 0.9601274, 1)
+tile_set = SubResource("TileSet_c0sxi")
