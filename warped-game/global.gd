@@ -2,7 +2,7 @@ extends Node
 
 var level = 1
 var failed = false
-var boss = true
+var boss = false
 var hard = false
 
 # Called when the node enters the scene tree for the first time.
