@@ -17,8 +17,8 @@ func check_button() -> void:
 	if entered and stick:
 		$AnimatedSprite2D/AnimatedSprite2D.frame = 0
 		entered = false
-		get_parent().get_node("barricade1").reactivate()
+		get_parent().get_node("barricade2").reactivate()
 	else:
 		$AnimatedSprite2D/AnimatedSprite2D.frame = 1
 		entered = true
-		get_parent().get_node("barricade1").deactivate()
+		get_parent().get_node("barricade2").deactivate()
