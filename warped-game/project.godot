@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="warped-game"
-run/main_scene="uid://r4i6jm7ifvaj"
+run/main_scene="uid://8ax1ogwo424w"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 global="*res://global.gd"
+MusicManager="*res://music_manager.tscn"
 
 [display]
 

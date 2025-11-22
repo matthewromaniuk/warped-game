@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c0cjjqgcxhhrh"
+path="res://.godot/imported/JOHN PORTAL.mp3-8247f38ade4ef3ee869795edf8f17943.mp3str"
+
+[deps]
+
+source_file="res://JOHN PORTAL.mp3"
+dest_files=["res://.godot/imported/JOHN PORTAL.mp3-8247f38ade4ef3ee869795edf8f17943.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

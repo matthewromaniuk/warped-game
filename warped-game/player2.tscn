@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c0ho0c2wpj14x"]
+[gd_scene load_steps=13 format=3 uid="uid://c0ho0c2wpj14x"]
 
 [ext_resource type="Script" uid="uid://cc4ugrg8vwm8o" path="res://player2.gd" id="1_rihsh"]
 [ext_resource type="Texture2D" uid="uid://igo65y8yaiyo" path="res://dude1.png" id="2_vop8p"]
@@ -82,9 +82,20 @@ _data = {
 &"portalTransition": SubResource("Animation_pqb02")
 }
 
+[sub_resource type="Gradient" id="Gradient_rihsh"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vop8p"]
+gradient = SubResource("Gradient_rihsh")
+fill = 1
+fill_from = Vector2(0.5186916, 0.5)
+fill_to = Vector2(0.88785046, 0.1495327)
+
 [node name="player2" type="CharacterBody2D"]
 collision_layer = 0
 collision_mask = 5
+motion_mode = 1
+platform_floor_layers = 4294967040
 script = ExtResource("1_rihsh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -123,6 +134,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_3pafw")
 }
 autoplay = "fall"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.1
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_vop8p")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cxv4bwxdhpqtt"]
+
+[node name="level15" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 234.0
+offset_top = 130.0
+offset_right = 274.0
+offset_bottom = 147.0
+text = "u win"

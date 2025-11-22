@@ -7,6 +7,7 @@ func _ready() -> void:
 		$Panel2/CheckButton.button_pressed = true
 
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -18,6 +19,7 @@ func _on_check_button_toggled(toggled_on: bool) -> void:
 
 func _on_play_pressed() -> void:
 	global.level = 1
+	MusicManager.play()
 	get_tree().change_scene_to_file("res://level1.tscn")
 
 
