@@ -18,7 +18,7 @@ script = ExtResource("2_awgvf")
 
 [node name="GUI" parent="." instance=ExtResource("3_awgvf")]
 
-[node name="button1" parent="." instance=ExtResource("10_1sn8b")]
+[node name="button2" parent="." instance=ExtResource("10_1sn8b")]
 position = Vector2(13, 112)
 
 [node name="walls" type="TileMapLayer" parent="."]
@@ -34,7 +34,7 @@ position = Vector2(198, 112)
 portal_name = "a"
 portal_colour = Color(0.16978168, 0.55846584, 0.83769065, 1)
 
-[node name="barricade1" parent="." instance=ExtResource("6_awgvf")]
+[node name="barricade2" parent="." instance=ExtResource("6_awgvf")]
 tile_map_data = PackedByteArray("AAAGAAMAAAABAAEAAAAGAAQAAAABAAEAAAA=")
 
 [node name="Portal a 2" parent="." instance=ExtResource("5_dixrb")]

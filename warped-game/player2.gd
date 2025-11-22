@@ -50,7 +50,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		get_parent().get_node("PortalScript").light_portals(2, portal)
 	elif "button_name" in area:
 		button = area.button_name
-		get_parent().get_node("button").check_button()
+		get_parent().get_node("button2").check_button()
 	else:	
 		pass
 
@@ -60,7 +60,7 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 		get_parent().get_node("PortalScript").unlight_portals(2)
 	elif "button_name" in area:
 		button = ""
-		get_parent().get_node("button").check_button()
+		get_parent().get_node("button2").check_button()
 		
 func portal_animation() -> void:
 	movement = false

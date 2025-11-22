@@ -1,11 +1,14 @@
-[gd_scene load_steps=10 format=4 uid="uid://dpy70gah2x6g4"]
+[gd_scene load_steps=13 format=4 uid="uid://dpy70gah2x6g4"]
 
 [ext_resource type="TileSet" uid="uid://dr2khdrk8jtl5" path="res://level.tres" id="1_i1nf5"]
 [ext_resource type="Script" uid="uid://bt5x27iv5dbhk" path="res://level_13.gd" id="2_i1nf5"]
 [ext_resource type="PackedScene" uid="uid://d1wpekww6s1et" path="res://gui.tscn" id="3_iu1u6"]
 [ext_resource type="TileSet" uid="uid://cw8uy3bo5kj6q" path="res://walls.tres" id="5_7rtn4"]
+[ext_resource type="PackedScene" uid="uid://c72q27q33qu2s" path="res://button1.tscn" id="6_lb4xy"]
 [ext_resource type="PackedScene" uid="uid://sq5fyi4cig0y" path="res://portal.tscn" id="6_ynu1v"]
+[ext_resource type="Script" uid="uid://bdls7h566j147" path="res://button_1.gd" id="7_1tfkg"]
 [ext_resource type="PackedScene" uid="uid://cj1aw3yon43uh" path="res://barricade.tscn" id="7_6jjuq"]
+[ext_resource type="PackedScene" uid="uid://b53ri8g8wwm2f" path="res://button2.tscn" id="7_iu1u6"]
 [ext_resource type="PackedScene" uid="uid://c5uecvr6r8uhy" path="res://player1.tscn" id="8_u7i8w"]
 [ext_resource type="PackedScene" uid="uid://c0ho0c2wpj14x" path="res://player2.tscn" id="9_l6sg6"]
 [ext_resource type="PackedScene" uid="uid://y37wayk747qe" path="res://portal_script.tscn" id="10_quure"]
@@ -26,18 +29,25 @@ tile_set = ExtResource("5_7rtn4")
 position = Vector2(103, 46)
 
 [node name="Portal a 1" parent="." instance=ExtResource("6_ynu1v")]
-position = Vector2(198, 112)
+position = Vector2(197, 113)
 portal_name = "a"
 portal_colour = Color(0.16978168, 0.55846584, 0.83769065, 1)
 
-[node name="barricade1" parent="." instance=ExtResource("7_6jjuq")]
-tile_map_data = PackedByteArray("AAACAAYAAAABAAEAAAACAAcAAAABAAEAAAA=")
+[node name="button1" parent="." instance=ExtResource("6_lb4xy")]
+position = Vector2(54, 112)
+script = ExtResource("7_1tfkg")
+
+[node name="button2" parent="." instance=ExtResource("7_iu1u6")]
+position = Vector2(119, 65)
 
 [node name="barricade2" parent="." instance=ExtResource("7_6jjuq")]
-tile_map_data = PackedByteArray("AAACAAQAAAABAAEAAAACAAMAAAABAAEAAAA=")
+tile_map_data = PackedByteArray("AAACAAYAAAABAAEAAAACAAcAAAABAAEAAAA=")
+
+[node name="barricade1" parent="." instance=ExtResource("7_6jjuq")]
+tile_map_data = PackedByteArray("AAACAAMAAAABAAEAAAACAAQAAAABAAEAAAA=")
 
 [node name="Portal a 2" parent="." instance=ExtResource("6_ynu1v")]
-position = Vector2(13, 66)
+position = Vector2(11, 65)
 portal_name = "a"
 
 [node name="player1" parent="." instance=ExtResource("8_u7i8w")]
