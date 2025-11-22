@@ -7,7 +7,14 @@ var portal : String
 var button : String
 var movement = true
 
+
+
 func _physics_process(delta: float) -> void:
+	if global.hard:
+		modulate = Color(1, 1, 1)
+	else:
+		modulate = Color(1.189, 0.51, 1.407)
+	
 	if movement:
 		# Add the gravity.
 		#if not is_on_floor():

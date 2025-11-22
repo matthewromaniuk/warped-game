@@ -8,6 +8,11 @@ var button : String
 var movement = true
 
 func _physics_process(delta: float) -> void:
+	if global.hard:
+		modulate = Color(1, 1, 1)
+	else:
+		modulate = Color(0.369, 0.878, 0.341)
+	
 	if movement:
 		# Add the gravity.
 		#if not is_on_floor():
